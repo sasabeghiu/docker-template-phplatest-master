@@ -1,20 +1,56 @@
 body {
-    font-family:'Times New Roman', Times, serif;
-    margin: 50px;
+  font-family: "Times New Roman", Times, serif;
+  margin: 50px;
 }
 p {
-    border: solid black 1px;
-    padding: 10px;
-    background-color: gray;
+  border: solid black 1px;
+  padding: 10px;
+  background-color: gray;
 }
 input {
-    margin-left: 17px;
+  margin-left: 17px;
 }
 textarea {
-    padding-left: 9px;
-    padding-bottom: 20px;
+  padding-left: 9px;
+  padding-bottom: 20px;
 }
 .form-field {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color:aliceblue;
+}
+
+th {
+  height: 70px;
+}
+
+td {
+    width: 1%;
+}
+
+.message {
+    width: 9%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.actions {
+    padding-top: 15px;
+    padding-right: 15px;
+}
+
+.welcome {
+    text-align: center;
 }
 

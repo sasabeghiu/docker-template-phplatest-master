@@ -7,17 +7,28 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+
+if (isset($_POST["delete"])) {
+    $id = htmlspecialchars($_GET["deleteid"]);
+    $stmt = $connection->prepare("DELETE FROM posts WHERE id=?");
+    //$stmt->bindParam(":id", $id);
+    $stmt->execute([$id]);
+
+    if ($stmt) {
+        header("Location: /cms_guestbook.php");
+    }
+}
 ?>
 
 <html>
 
 <head>
     <title>Guestbook CMS</title>
-    <link rel="stylesheet" href="#.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <h1>Welcome to Guestbook Management Page</h1>
+    <h1 class="welcome">Welcome to Guestbook Management Page</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -26,6 +37,7 @@ try {
             <th>Email</th>
             <th>Message</th>
             <th>IP Address</th>
+            <th colspan="2">Actions</th>
         </tr>
         <?php
         $result = $connection->query("SELECT * FROM posts");
@@ -34,14 +46,14 @@ try {
             echo ("<td>" . $row['posted_at'] . "</td>");
             echo ("<td>" . $row['name'] . "</td>");
             echo ("<td>" . $row['email'] . "</td>");
-            echo ("<td>" . $row['message'] . "</td>");
+            echo ("<td class='message'>" . $row['message'] . "</td>");
             echo ("<td>" . $row['ip_address'] . "</td>");
-            echo ("<td>
-                <form action='delete.php?id=" . $row['id'] . "' method='POST'>
-                <input type='hidden' name='name' value='" . $row['id'] . "'>
+            echo ("<td class='actions'>
+                <form action='cms_guestbook.php?deleteid=" . $row['id'] . "' method='POST'>
+                <input type='hidden' name='delete' value='" . $row['id'] . "'>
                 <input type='submit' name='submit' value='Delete'>
                 </form></td>");
-            echo ("<td>
+            echo ("<td class='actions'>
                 <form action='update.php?id=" . $row['id'] . "' method='POST'>
                 <input type='hidden' name='name' value='" . $row['id'] . "'>
                 <input type='submit' name='submit' value='Update'>
