@@ -1,6 +1,16 @@
 <?php
 require_once("dbconfig.php");
 
+//redirect to login page if user not logged in
+session_start();
+if (!isset($_SESSION['user']))
+{
+    header("Location:login.php");
+}
+//disply logged username
+echo "User <b>" .  $_SESSION['user'] . "</b> Logged in successfully! ";
+echo "<a href='logout.php'> Logout</a> ";
+
 try {
     $connection = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -54,8 +64,8 @@ if (isset($_POST["delete"])) {
                 <input type='submit' name='submit' value='Delete'>
                 </form></td>");
             echo ("<td class='actions'>
-                <form action='update.php?id=" . $row['id'] . "' method='POST'>
-                <input type='hidden' name='name' value='" . $row['id'] . "'>
+                <form action='update_post.php?updateid=" . $row['id'] . "' method='POST'>
+                <input type='hidden' name='update' value='" . $row['id'] . "'>
                 <input type='submit' name='submit' value='Update'>
                 </form></td></tr>");
         }
