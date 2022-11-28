@@ -72,7 +72,6 @@ try {
         </p>
     <?php
     }
-    // if server req method === get if isset get id id=get id -: delete id
     ?>
 </body>
 

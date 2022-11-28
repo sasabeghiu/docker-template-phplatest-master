@@ -3,8 +3,7 @@ require_once("dbconfig.php");
 
 //redirect to login page if user not logged in
 session_start();
-if (!isset($_SESSION['user']))
-{
+if (!isset($_SESSION['user'])) {
     header("Location:login.php");
 }
 //disply logged username
@@ -25,7 +24,11 @@ if (isset($_POST["delete"])) {
     $stmt->execute([$id]);
 
     if ($stmt) {
-        header("Location: /cms_guestbook.php");
+?>
+        <script type="text/javascript">
+            window.location.href = '/cms_guestbook.php';
+        </script>
+<?php
     }
 }
 ?>
@@ -65,8 +68,8 @@ if (isset($_POST["delete"])) {
                 </form></td>");
             echo ("<td class='actions'>
                 <form action='update_post.php?updateid=" . $row['id'] . "' method='POST'>
-                <input type='hidden' name='update' value='" . $row['id'] . "'>
-                <input type='submit' name='submit' value='Update'>
+                <input type='hidden' name='edit' value='" . $row['id'] . "'>
+                <input type='submit' name='submit' value='Edit'>
                 </form></td></tr>");
         }
         ?>
