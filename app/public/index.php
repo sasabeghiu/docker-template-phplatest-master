@@ -75,7 +75,7 @@
 
                                 <div class="card-footer">
                                     <span class="fw-bold fs-4 price float-start"><?= number_format($product->price, 2, '.') ?></span>
-                                    <button type="button" class="btn btn-secondary float-end"> + </button>
+                                    <button type="button" class="round btn btn-secondary float-end"> + </button>
                                 </div>
 
                             </div>
@@ -86,6 +86,27 @@
                 </div>
             </div>
     </section>
+
+    <footer class="bg-light text-white">
+        <div class="container p-4 pb-0 text-center">
+            <section class="mb-4">
+                <div class="text-dark">Follow us on:</div>
+                <!-- Twitter -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                <!-- Facebook -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Instagram -->
+                <a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+            </section>
+        </div>
+        <div class="text-left p-3 bg-dark">
+            <div class="container">
+                © 2017 - 2021 Best store ever &middot;
+                <a class="text-white" href="/">Privacy</a> &middot; <a class="text-white" href="/">Terms</a> <a class="text-white float-end" href="index.php">Back to top</a>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

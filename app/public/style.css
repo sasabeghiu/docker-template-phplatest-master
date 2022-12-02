@@ -22,6 +22,10 @@ img {
   margin-bottom: 10px;
 }
 
+.round {
+  border-radius: 38px;
+}
+
 @media screen and (max-width: 768px) {
 
   .product-card img {
