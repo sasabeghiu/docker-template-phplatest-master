@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+img {
+  max-width: 115px;
+  max-height: 100px;
+}
+
+.product-card img {
+  margin: auto;
+  display: block;
+  max-width: 115px;
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .product-card img {
+    width: 85px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    height: auto;
+    float: left;
+  }
+  
+}
