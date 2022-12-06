@@ -5,7 +5,7 @@ foreach ($model as $article) {
 ?>
     <h4><?= ucfirst($article->getTitle()) ?></h4>
     <small>By: <?= $article->getAuthor() ?> at <?= $article->getPostedAt() ?></small>
-    <p><?= $article->getcContent() ?></p>
+    <p><?= $article->getContent() ?></p>
 <?php
 }
 ?>
