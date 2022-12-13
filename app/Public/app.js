@@ -1,7 +1,6 @@
 function addItem() {
   const textarea = document.getElementById("todoText");
-
-  // write your solution here
+  
   const colDiv = document.createElement("div");
   colDiv.className = "col-md-6 col-xxl-4";
 
@@ -12,7 +11,7 @@ function addItem() {
   bodyDiv.className = "card-body";
 
   const buttonDelete = document.createElement("button");
-  buttonDelete.className = "btn btn-secondary";
+  buttonDelete.className = "btn btn-danger";
   buttonDelete.innerHTML = "Delete";
   buttonDelete.style.width = "72px";
   buttonDelete.style.height = "38px";
@@ -22,11 +21,7 @@ function addItem() {
 
   var itemList = document.getElementById("itemList");
   itemList.appendChild(colDiv);
-
-  var card = document.getElementById("card");
   colDiv.appendChild(cardDiv);
-
-  var body = document.getElementById("card-body");
   cardDiv.appendChild(bodyDiv);
 
   const p = document.createElement("p");
@@ -35,8 +30,6 @@ function addItem() {
 
   const text = document.createTextNode(textarea.value);
   p.appendChild(text);
-
-  const current = document.getElementById("card-body");
 
   textarea.value = "";
 }
